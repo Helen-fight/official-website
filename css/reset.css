@@ -1,0 +1,97 @@
+.head{
+	padding: 14px 0;
+	background-color: #7750A6;
+}
+
+.logo-box,.logo-box img,.logo-box span{
+	float: left;
+}
+.logo-box span{
+	font-size: 18px;
+	color: #fff;
+	margin-top: 10px;
+	margin-left: 25px;
+}
+.login-btn{
+	float: right;
+	width: 70px;
+	height: 30px;
+	margin-top: 6px;
+	line-height: 30px;
+	text-align: center;
+	background-color: #fff;
+	font-size: 18px;
+	color: #7750A6;
+	border-radius: 6px;
+}
+.main{
+	width: 380px;
+	margin: 0 auto;
+}
+.logo-icon{
+	width: 64px;
+	height: 70px;
+	margin: 100px auto 20px;
+}
+.logo-icon img{
+	width: 100%;
+}
+.title{
+	font-size: 26px;
+	color: #7750A6;
+	margin-bottom: 50px;
+	text-align: center;
+}
+.pwd{
+	width: 100%;
+	height: 44px;
+	line-height: 44px;
+	font-size: 16px;
+	color: #666;
+	padding-left: 10px;
+	border: 1px solid #DCDCDC;
+	border-radius: 6px;
+	margin-bottom: 28px;
+}
+.sure{
+	width: 200px;
+	height: 44px;
+	margin: 30px auto;
+	line-height: 44px;
+	text-align: center;
+	font-size: 16px;
+	color: #fff;
+	background-color: #7750A6;
+	border-radius: 6px;
+	cursor: pointer;
+}
+.msg-wrap{
+	position: relative;
+}
+.msg{
+	position: absolute;
+	left: 100%;
+	top: 0;
+	padding-left: 10px;
+	height: 44px;
+	line-height: 44px;
+	color: red;
+	white-space: nowrap;
+}
+
+@media (min-width: 768px){
+	.modal-dialog {
+	    width: 380px;
+	    margin: 30px auto;
+	}
+	
+}
+@media (max-width: 768px){
+	#logo,#xian{display: none;}
+	.main{width: auto; margin: 0 16px;}
+	.msg{
+		left: 0;
+		top: 36px;
+	}
+}
+
