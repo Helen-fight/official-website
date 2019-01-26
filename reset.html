@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+	<meta name="format-detection" content="telephone=no, email=no">
+	<link rel="stylesheet" href="css/bootstrap.min.css" />
+	<link rel="stylesheet" href="css/reset.css"/>
+	<title>重置密码</title>
+</head>
+<body>
+<header class="head">
+	<div class="container clearfix">		
+		<div class="logo-box"><a href="/" id="logo"><img src="css/images/logo.png"></a><span id="xian">|</span><span>重置密码</span></div>
+		<a class="login-btn" href="/">登录</a>
+	</div>
+</header>
+<div class="main">
+	<div class="logo-icon"><img src="css/images/logo@2x.png"></div>
+	<p class="title">重置密码</p>
+	<div class="msg-wrap">
+		<input id="pwd" class="pwd" type="password" placeholder="请设置新密码" />
+		<p class="msg"></p>
+	</div>
+	<div class="msg-wrap">
+		<input id="pwd2" class="pwd" type="password" placeholder="请再次输入新密码" />
+		<p class="msg"></p>
+	</div>	
+	<p class="sure">确定</p>
+</div>
+<div class="modal fade" id="success" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            </div>
+            <div class="modal-body text-center">密码重置成功，请妥善保存！</div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script>
+$(function(){
+	var pwd='',pwd2='';
+	var baseUrl = window.location.origin+'/';
+	$('#pwd').on('input',function(){
+		pwd = $('#pwd').val();
+	})
+	
+	$('#pwd2').on('input',function(){
+		pwd2 = $('#pwd2').val();
+	})
+	
+	$('#pwd').on('focus',function(){
+		$('.msg').eq(0).html('');
+	})
+	
+	$('#pwd2').on('focus',function(){
+		$('.msg').eq(1).html('');
+	})
+	
+	$('.sure').on('click',function(){
+		if(pwd==''){
+			$('.msg').eq(0).html('密码不能为空');
+			return ;
+		}
+		if(pwd.length<5 || pwd.length>30){
+			$('.msg').eq(0).html('密码长度需在5到30个字符之间');
+			return ;
+		}
+		if(pwd2==''){
+			$('.msg').eq(1).html('请确认密码');
+			return ;
+		}
+		if(pwd2!=pwd){
+			$('.msg').eq(1).html('两次输入的密码不一致');
+			return ;
+		}
+		$.ajax({
+			type: 'POST',
+			url: baseUrl+'index/index/resetPwd',
+			data:{
+				pwd: pwd,
+				pwd2: pwd2
+			},
+			success: function(res){
+				console.log(res)
+				if(res.code==1){
+					$('#success').modal('show')
+				}
+				
+			}
+		})
+	})
+})
+</script>
+</body>
+</html>

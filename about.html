@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+	<meta name="format-detection" content="telephone=no, email=no">
+	<link rel="stylesheet" href="css/bootstrap.min.css" />
+	<link rel="stylesheet" href="css/common.css"/>
+	<link rel="stylesheet" href="css/other.css"/>
+	<title>关于我们</title>
+</head>
+<body>
+<div id="app">
+<!--start: head-->
+<my-head ref="head"></my-head>
+<!--end: head-->
+<!--start: phoneHead-->
+<phead></phead>
+<!--end: phoneHead-->
+<div class="ad-banner about-banner">
+	<div class="content">
+		<p class="ab-title" id="appStore">关于我们</p>
+	</div>
+</div>
+<!--start: 公司介绍-->
+<div class="ad-body about-content" style="display: block;">
+	<div class="container">
+		<p class="about-title">公司介绍</p>
+		<div class="clearfix">
+			<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 aso-text">
+				飞势科技专注于全球移动效果营销、APP分发以及品牌媒体整合的全案营销服务，拥有海量优质媒体资源、亿万精准用户画像、多维度定向投放机制、最大化提升广告效果。<br />团队成员均为移动互联网行业资深人士，拥有众多大型客户服务经验、多年移动广告推广经验、全球领先的推广优势和资源。<br />公司致力于打造全球创新的营销连接平台，全方位满足客户需求，连接创造价值。
+			</div>
+			<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 logo-img">
+				<div>
+					<img src="css/images/logo2.png" />
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="server-box">
+		<div class="container">
+			<p class="title">公司地址</p>
+			<div class="ctab-box">					
+				<div><p class="address" id="address">地址：北京市朝阳区三里屯SOHO办公C 22层</p></div>
+				<div class="map" id="map"></div>
+			</div>
+		</div>
+	</div>			
+	<div class="server-box">
+		<div class="container">
+			<p class="title" style="padding-top: 10px;">联系我们</p>
+			<div class="contact-wrap">
+				<div class="about-contact clearfix"> 
+					<div class="aicon-box">
+						<i class="aemail"></i>
+						<span>商务邮箱</span>
+					</div>
+					<p class="qq">bd@flypower.net</p>						
+				</div>
+				<a href="mailto:bd@flypower.net" class="contact-btn">联系我们</a>
+			</div>
+		</div>
+	</div>	
+</div>
+<!--end: 公司介绍-->
+<!--start: footer-->
+<my-foot></my-foot>
+<!--end: footer-->
+
+<!--start: 注册-->
+<register></register>
+<!--end: 注册-->
+<!--start: 广告主注册步骤2-->
+<register2></register2>
+<!--end: 广告主注册2-->
+<!--start: 广告主注册步骤3-->
+<register3></register3>
+<!--end: 广告主注册3-->
+
+<!--start: 登录-->
+<login></login>
+<!--end: 登录-->
+
+<!--start: 注册成功-->
+<reg-success ref="success"></reg-success>
+<!--end: 注册成功-->
+
+<!--start: 找回密码-->
+<get-pwd></get-pwd>
+<!--end： 找回密码-->
+<!--start: 找回密码成功-->
+<get-pwd2></get-pwd2>
+<!--end： 找回密码成功-->
+
+</div>
+<script type="text/javascript" src="js/jquery-3.3.1.min.js" ></script>
+<script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=v9GF2OMwHqMj5nGp9L543T4qPB6YKVfm"></script>
+<script type="text/javascript" src="js/bootstrap.min.js" ></script>
+<script type="text/javascript" src="js/vue.min.js"></script>
+<script type="text/javascript" src="js/common.js" ></script>
+<script>
+$(function(){
+	$('#appStore').css({
+		'paddingTop':'0',
+		'opacity':'1'
+	});
+	
+	//地图初始化和切换
+    function map_init() {
+        var map = new BMap.Map("map"); // 创建Map实例
+        var point = new BMap.Point(116.461005,39.937946); //地图中心点
+        var myIcon = new BMap.Icon("./css/images/map_point.png", new BMap.Size(36,48));	//定义标注点图标
+		
+		var info = new window.BMap.InfoWindow("<p style='font-size:12px;line-height:1.8em;margin-top:20px'>北京市朝阳区三里屯SOHO办公C 22层</p>"); // 创建信息窗口对象
+		var marker = 	new window.BMap.Marker(point,{icon:myIcon}); //按照地图点坐标生成标记	
+		map.addOverlay(marker);
+		map.centerAndZoom(point,18);
+		marker.openInfoWindow(info);		
+    }
+    
+    map_init();	
+})
+	
+</script>
+</body>
+</html>

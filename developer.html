@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+	<meta name="format-detection" content="telephone=no, email=no">
+	<link rel="stylesheet" href="css/bootstrap.min.css" />
+	<link rel="stylesheet" href="css/common.css"/>
+	<link rel="stylesheet" href="css/other.css"/>
+	<title>移动应用</title>
+</head>
+<body>
+<div id="app">
+<!--start: head-->
+<my-head ref="head"></my-head>
+<!--end: head-->
+<!--start: phoneHead-->
+<phead></phead>
+<!--end: phoneHead-->
+<div class="ad-banner dev-banner" id="banner">
+	<div class="content">
+		<i class="qn-icon" id="qnIcon"></i>
+		<p>钱牛开启您的赚钱之旅</p>
+		<img class="dev-code" alt="" src="css/images/code.png" />
+		<p class="follow">扫码关注我们</p>
+	</div>
+</div>
+<div class="ad-body">	
+	<div class="fullad-box video-box">
+		<div class="container dev-container">
+			<div class="col-xs-12 col-xs-bottom col-sm-6 col-md-6 col-lg-6 fullad-right">
+				<div class="phone-box">
+					<img class="fixed-img" src="images/fixed5.png" />
+					<img class="effect-img" src="images/effect5.png" />
+				</div>
+			</div>
+			<div class="col-xs-12 col-xs-top col-sm-6 col-md-6 col-lg-6 fullad-left">
+				<p class="title">试玩领取现金红包</p>
+				<p class="content">钱牛为你提供超多好玩的应用，试玩还能领取丰厚的现金红包哦</p>
+			</div>
+		</div>
+	</div>
+	
+	<div class="fullad-box">
+		<div class="container">
+			<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 fullad-left">
+				<p class="title">支持支付宝提现</p>
+				<p class="content">随时提现，你可以在这里享受最便捷的服务</p>
+			</div>
+			<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 fullad-right">
+				<div class="phone-box">
+					<img class="fixed-img" src="images/fixed6.png" />
+					<img class="effect-img" src="images/effect6.png" />
+				</div>
+			</div>			
+		</div>
+	</div>
+</div>
+<!--start: footer-->
+<my-foot></my-foot>
+<!--end: footer-->
+
+<!--start: 注册-->
+<register></register>
+<!--end: 注册-->
+<!--start: 广告主注册步骤2-->
+<register2></register2>
+<!--end: 广告主注册2-->
+<!--start: 广告主注册步骤3-->
+<register3></register3>
+<!--end: 广告主注册3-->
+
+<!--start: 登录-->
+<login></login>
+<!--end: 登录-->
+
+<!--start: 注册成功-->
+<reg-success ref="success"></reg-success>
+<!--end: 注册成功-->
+
+<!--start: 找回密码-->
+<get-pwd></get-pwd>
+<!--end： 找回密码-->
+<!--start: 找回密码成功-->
+<get-pwd2></get-pwd2>
+<!--end： 找回密码成功-->
+
+</div>
+<script type="text/javascript" src="js/jquery-3.3.1.min.js" ></script>
+<script type="text/javascript" src="js/bootstrap.min.js" ></script>
+<script type="text/javascript" src="js/vue.min.js" ></script>
+<script type="text/javascript" src="js/common.js" ></script>
+<script>	
+$(function(){
+	$('#banner').css('height',$(window).height());
+})	
+</script>
+</body>
+</html>

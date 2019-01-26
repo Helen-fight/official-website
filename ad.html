@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+	<meta name="format-detection" content="telephone=no, email=no">
+	<link rel="stylesheet" href="css/swiper-3.4.2.min.css" />
+	<link rel="stylesheet" href="css/bootstrap.min.css" />
+	<link rel="stylesheet" href="css/common.css"/>
+	<link rel="stylesheet" href="css/other.css"/>
+	<title>ASO 优化</title>
+</head>
+<body>
+<div id="app">
+<!--start: head-->
+<my-head ref="head"></my-head>
+<!--end: head-->
+<!--start: phoneHead-->
+<phead></phead>
+<!--end: phoneHead-->
+<div class="ad-banner" id="banner">
+	<div class="content">
+		<p id="appStore">App Store生态营销</p>
+	</div>
+</div>
+<div class="ad-body">
+	<div class="container">
+		<p class="app-store">
+			App Store是iOS生态的核心流量平台，是iOS营销领域最重要的组成部分。飞势科技依托成熟的客户
+服务经验、优质媒体资源、海量用户流量以及自主研发的实时效果监测系统，致力于为客户打造集优化
+方案、智能投放、数据分析、效果监控为一体的综合性服务平台
+		</p>
+	</div>
+	
+	<div class="fullad-box video-box">
+		<div class="container"> 
+			<div class="col-xs-12 col-sm-7 col-md-7 col-lg-7 fullad-right">
+				<img class="ad-img" alt="" src="images/ad.png" />
+			</div>
+			<div class="col-xs-12 col-sm-5 col-md-5 col-lg-5 fullad-left">
+				<p class="title">核心优势</p>
+				<p class="content">智能投放及实时效果监控平台</p>
+				<a href="javascript:;" class="putin" id="putin">我要投放</a>
+			</div>
+		</div>
+	</div>
+	
+	<div class="container">
+		<div class="swiper-container aso-box" id="aso">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide">
+					<div class="aso-img"><img alt="" src="images/aso.png" /></div>
+				</div>
+				<div class="swiper-slide">
+					<div class="aso-img"><img alt="" src="images/aso1.png" /></div>
+				</div>
+				<div class="swiper-slide">
+					<div class="aso-img"><img alt="" src="images/aso2.png" /></div>
+				</div>
+				<div class="swiper-slide">
+					<div class="aso-img"><img alt="" src="images/aso3.png" /></div>
+				</div>
+				<div class="swiper-slide">
+					<div class="aso-img"><img alt="" src="images/aso4.png" /></div>
+				</div>
+			</div>
+			<div class="swiper-pagination"></div>
+			<p class="aso-title">ASO优化</p>
+		</div>	
+	</div>
+	
+</div>
+<!--start: footer-->
+<my-foot></my-foot>
+<!--end: footer-->
+<!--start: 注册-->
+<register></register>
+<!--end: 注册-->
+<!--start: 广告主注册步骤2-->
+<register2></register2>
+<!--end: 广告主注册2-->
+<!--start: 广告主注册步骤3-->
+<register3></register3>
+<!--end: 广告主注册3-->
+<!--start: 登录-->
+<login></login>
+<!--end: 登录-->
+<!--start: 注册成功-->
+<reg-success ref="success"></reg-success>
+<!--end: 注册成功-->
+<!--start: 找回密码-->
+<get-pwd></get-pwd>
+<!--end： 找回密码-->
+<!--start: 找回密码成功-->
+<get-pwd2></get-pwd2>
+<!--end： 找回密码成功-->
+
+</div>
+<script type="text/javascript" src="js/jquery-3.3.1.min.js" ></script>
+<script type="text/javascript" src="js/swiper-3.4.2.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js" ></script>
+<script type="text/javascript" src="js/vue.min.js" ></script>
+<script type="text/javascript" src="js/common.js" ></script>
+<script>
+$(function(){
+	$('#banner').css('height',$(window).height());
+	$('#appStore').css({
+		'paddingTop':'0',
+		'opacity':'1'
+	});
+	//aso优化轮播
+	var asoSwiper = new Swiper('#aso',{
+		speed:1000,
+		autoplayDisableOnInteraction : false,	//设置是swipr操作后是否停止自动轮播
+		loop:true,
+		centeredSlides : true,	//设定swiper活动块为居中
+		slidesPerView:3,	//设置界面显示的swiper-slide的显示个数
+		pagination : '.swiper-pagination',	//分页器
+		paginationClickable: true,	//设置分页器点击时，swiper是否切换
+       	breakpoints: {	//类似媒体查询，当宽度小于768时，显示的slide为1
+            768: {
+                slidesPerView: 1,
+            }
+       	}	
+	});
+	
+	$('#putin').click(function(){
+		$('#login-myModal').modal('show');	
+	})
+})	
+</script>
+</body>
+</html>
